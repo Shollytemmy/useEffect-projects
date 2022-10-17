@@ -1,35 +1,21 @@
-import {useState, useEffect, useRef} from 'react'
+import React from 'react'
 import './App.css';
+import CheckBox from './components/CheckBox';
+import DataFetching from './components/DataFetching';
 
 function App() {
 
-  const [checked, setChecked] = useState(false)
+ 
 
-  const nameref = useRef(null)
-
-  useEffect(() => {
-    alert(`checkrd: ${checked.toString()}`)
-   
-  })
-
-  useEffect(() => {
-     nameref.current.focus()
-
-  })
+ 
 
   
   return (
     <div className="App">
       <h1>useEffect hook</h1>
-<div>
-  <input type="checkbox" name="checkbox" id="" value={checked} onClick={() => setChecked(!checked)} />
-      {checked ? 'checked' : 'not checked'}
+      {/* <DataFetching /> */}
+      <CheckBox />
 
-</div>
-<div>
-  Name:
-  <input type="text" ref={nameref} />
-</div>
       
     </div>
 
