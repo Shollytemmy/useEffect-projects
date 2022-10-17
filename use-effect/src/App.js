@@ -5,10 +5,13 @@ import DataFetching from './components/DataFetching';
 import FetchingWithButtonClick from './components/FetchingWithButtonClick';
 import SinglePostDataFetch from './components/SinglePostDataFetch';
 
+export const buttonContext = React.createContext()
+
 function App() {
 
- 
 
+ 
+ let value = "FetchData"
  
 
   
@@ -18,7 +21,10 @@ function App() {
       {/* <DataFetching /> */}
       {/* <CheckBox /> */}
       {/* <SinglePostDataFetch /> */}
+      <buttonContext.Provider value={value}>
       <FetchingWithButtonClick />
+
+      </buttonContext.Provider>
 
       
     </div>
