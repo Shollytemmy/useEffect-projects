@@ -2,6 +2,7 @@ import React, { useEffect, useReducer } from 'react'
 
 
 const initialState = {
+    id: 9,
     post: {},
     loading: true,
     hasError: ''
@@ -17,6 +18,15 @@ const reducerFunc = (state, {type, payload}) => {
                 hasError: ''
             }
 
+        }
+
+        case "ONCHANGE":{
+            console.log(payload)
+            return{...state, loading: false,
+                id: payload,
+                hasError: ''
+              
+             }
         }
 
         case "ERROR_OCCUR":{
@@ -39,7 +49,7 @@ const reducerFunc = (state, {type, payload}) => {
 const DataFetchingWithReducer = () => {
     const [state, dispatch] = useReducer(reducerFunc, initialState)
 
-const apiURL = "https://jsonplaceholder.typicode.com/posts/1"
+const apiURL = `https://jsonplaceholder.typicode.com/posts/${state.id}`
 
     useEffect(() => {
         fetch(apiURL)
@@ -51,10 +61,11 @@ const apiURL = "https://jsonplaceholder.typicode.com/posts/1"
             console.log("error", error);
             dispatch({type: "ERROR_OCCUR", payload: error.message})
         })
-    }, [])
+    }, [state.id])
 
   return (
     <div>
+        <input type="text" value={state.id} onChange={(e) => dispatch({type: "ONCHANGE", payload: e.target.value})} /><br />
         {state.loading ? "Loading ...": state.post.title}
         {state.hasError ? state.hasError: null}
     </div>
