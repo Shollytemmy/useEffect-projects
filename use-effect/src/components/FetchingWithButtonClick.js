@@ -3,9 +3,16 @@ import React, { useEffect, useState } from 'react'
 const FetchingWithButtonClick = () => {
     const [post, setPost] = useState({})
     const [id, setId] = useState(1)
+    const [idFromButtonClick, setIdFromButtonClick] = useState(1)
 
-    const apiURL = `https://jsonplaceholder.typicode.com/posts/${id}`
+    const apiURL = `https://jsonplaceholder.typicode.com/posts/${idFromButtonClick}`
 
+
+    const handleClick = () => {
+
+        setIdFromButtonClick(id)
+
+    }
 
     useEffect(() => {
         fetch(apiURL)
@@ -15,11 +22,11 @@ const FetchingWithButtonClick = () => {
             setPost(result)
         })
 
-    }, [id])
+    }, [idFromButtonClick])
   return (
     <div>
         <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
-        <button>FetchData</button>
+        <button onClick={handleClick}>FetchData</button>
         <p>{post.title}</p>
     </div>
   )
