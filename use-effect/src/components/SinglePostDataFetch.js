@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 
 const SinglePostDataFetch = () => {
   const [post, updatePost] = useState({})
+  const [getId, updateId] = useState(1)
 
-  const apiURL = "https://jsonplaceholder.typicode.com/posts/2"
+  const apiURL = `https://jsonplaceholder.typicode.com/posts/${getId}`
 
 
   useEffect(() => {
@@ -13,10 +14,12 @@ const SinglePostDataFetch = () => {
       console.log(result)
       updatePost(result)
     })
-  }, [])
+  }, [getId])
   return (
     <div>
-      {post.title}
+      <input type="text" name="" value={getId} id="" onChange={(e) => updateId(e.target.value)} />
+
+      <p>{post.title}</p>
     </div>
   )
 }

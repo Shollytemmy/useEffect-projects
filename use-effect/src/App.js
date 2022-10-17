@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css';
 import CheckBox from './components/CheckBox';
 import DataFetching from './components/DataFetching';
+import FetchingWithButtonClick from './components/FetchingWithButtonClick';
 import SinglePostDataFetch from './components/SinglePostDataFetch';
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
       <h1>useEffect hook</h1>
       {/* <DataFetching /> */}
       {/* <CheckBox /> */}
-      <SinglePostDataFetch />
+      {/* <SinglePostDataFetch /> */}
+      <FetchingWithButtonClick />
 
       
     </div>
