@@ -6,7 +6,7 @@ const DataFetching = () => {
   const apiURL = "https://jsonplaceholder.typicode.com/posts"
 
 
-  useEffect(() => {
+  useEffect(() => { 
     fetch(apiURL)
     .then((response) => response.json())
     .then((result) =>{
