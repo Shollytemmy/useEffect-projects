@@ -4,6 +4,7 @@ import CheckBox from './components/CheckBox';
 import DataFetching from './components/DataFetching';
 import DataFetchingWithReducer from './components/DataFetchingWithReducer';
 import FetchingWithButtonClick from './components/FetchingWithButtonClick';
+import RandomCounter from './components/RandomCounter';
 import SinglePostDataFetch from './components/SinglePostDataFetch';
 
 export const buttonContext = React.createContext()
@@ -27,7 +28,8 @@ function App() {
 
       </buttonContext.Provider> */}
 
-      <DataFetchingWithReducer />
+      {/* <DataFetchingWithReducer /> */}
+      <RandomCounter />
 
       
     </div>

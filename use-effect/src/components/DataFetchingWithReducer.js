@@ -2,7 +2,7 @@ import React, { useEffect, useReducer } from 'react'
 
 
 const initialState = {
-    id: 9,
+    id: 1,
     post: {},
     loading: true,
     hasError: ''
