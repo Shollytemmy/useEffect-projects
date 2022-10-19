@@ -7,18 +7,17 @@ const RandomCounter = () => {
 
     const addItem = () => {
         setItems(
-            [...items, Math.floor((Math.random()*40) + 1) 
-                // {
-                //     id: items.length,
-                //     value: Math.floor((Math.random()*40) + 1) 
-                // }
+            [...items,{
+                    id: items.length,
+                    value: Math.floor((Math.random()*40) + 1) 
+                }
             ]
         )
     }
-  return (
+  return ( 
     <div>
         <button onClick={addItem}>Click to Generate</button>
-        {items.map((item, i) => <li key={i}>{item}</li>)}
+        {items.map((item) => <li key={item.id}>{item.value}</li>)}
     </div>
   )
 }
