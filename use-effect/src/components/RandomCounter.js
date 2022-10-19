@@ -23,3 +23,4 @@ const RandomCounter = () => {
 }
 
 export default RandomCounter
+

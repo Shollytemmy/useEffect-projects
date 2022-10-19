@@ -6,6 +6,7 @@ import DataFetchingWithReducer from './components/DataFetchingWithReducer';
 import FetchingWithButtonClick from './components/FetchingWithButtonClick';
 import RandomCounter from './components/RandomCounter';
 import SinglePostDataFetch from './components/SinglePostDataFetch';
+import UpdateTitle from './components/UpdateTitle';
 
 export const buttonContext = React.createContext()
 
@@ -29,7 +30,8 @@ function App() {
       </buttonContext.Provider> */}
 
       {/* <DataFetchingWithReducer /> */}
-      <RandomCounter />
+      {/* <RandomCounter /> */}
+      <UpdateTitle />
 
       
     </div>
